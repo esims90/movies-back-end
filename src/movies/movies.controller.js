@@ -1,6 +1,7 @@
 const service = require("./movies.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
+//Validation middleware:
 async function movieIdExists(req, res, next) {
     const { movieId } = req.params;
     const foundMovie = await service.read(movieId);
@@ -11,6 +12,7 @@ async function movieIdExists(req, res, next) {
     next({ status: 404, message: ` Movie cannot be found.` });
 }
 
+//Route handlers:
 async function list(req, res) {
     if(req.query.is_showing){
         res.json({ data: await service.inTheatersNow() });

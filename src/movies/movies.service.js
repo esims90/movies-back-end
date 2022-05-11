@@ -1,6 +1,7 @@
 const knex = require("../db/connection");
 const mapProperties = require("../utils/map-properties");
 
+//Nested critics object for data object in listReviewsForMovie
 const addCriticDetails = mapProperties({
     critic_id: "critic.critic_id",
     preferred_name: "critic.preferred_name",

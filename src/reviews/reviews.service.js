@@ -1,6 +1,7 @@
 const knex = require("../db/connection");
 const mapProperties = require("../utils/map-properties");
 
+//Nested critics object for data object in getReviewWithCritic
 const addCriticDetails = mapProperties({
     preferred_name: "critic.preferred_name",
     surname:"critic.surname",
@@ -43,5 +44,5 @@ module.exports = {
     read,
     update,
     getReviewWithCritic,
-    destroy,
+    delete: destroy,
 };
